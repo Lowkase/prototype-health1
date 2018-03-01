@@ -1,0 +1,34 @@
+// --------------------------------------------------------------------------------
+// MODULES - MODALS
+// --------------------------------------------------------------------------------
+.m-modal 									{ width:600px; height:500px; margin:auto; position:absolute; top:0; right:0; bottom:0; left:0; display:none; background:$color-white-default; z-index:599;
+	.header 								{ width:100%; height:30px; padding:10px; position:absolute; top:0; left:0; border-bottom:1px solid $color-gray-lighter2;
+		.title 								{ text-align:center; font-size:1.125em; font-weight:$font-weight-medium; }
+	}
+	.body 									{ width:100%; position:absolute; top:30px; left:0; bottom:60px; padding:20px; background:$color-white-darker;
+		.step 								{ display:none; }
+	}
+	.footer 								{ width:100%; height:60px; padding:10px; position:absolute; left:0; bottom:0; left:0; border-top:1px solid $color-gray-lighter2; 
+		.m-btn 								{ margin-left:10px; float:right; }
+	}
+	&.m-modal-wizard 						{ 
+		.header 							{ height:100px; }
+		.body  								{ top:100px; }
+		.m-nav-wizard						{ margin-top:27px; display:block; }
+	}
+}
+.m-modal-close								{ width:24px; height:20px; position:absolute; top:5px; right:10px; z-index:1; font-size:1.5em; cursor:pointer;}
+.m-modal-overlay 							{ width:100%; height:100%; position:absolute; top:0; bottom:0; left:0; display:none; z-index:299; background:rgba(0, 0, 0, 0.6); }
+
+.m-nav-wizard								{ display:none; 
+	ul 										{ @include cf(); }
+	li 										{ @include col(4/12); @include cf(); text-align:center; font-weight:$font-weight-light; }
+	.step-icon 								{ padding:3px 7px; display:inline; background:$color-gray-lighter1; color:$color-white-default; font-size:0.750em; @include border-radius-all(20px); }
+	.step-text 								{ display:inline; color:$color-gray-lighter1; font-size:0.875em; }
+	.step-active 							{
+		.step-icon 							{ background:$color-blue-lighter1; }
+		.step-text 							{ color:$color-blue-lighter1; }
+	}
+}
+
+#modal-user-options							{ width:240px; height:260px; }

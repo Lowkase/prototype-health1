@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title v-text="title">HCIP</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100,900' rel='stylesheet' type='text/css'>
+        <link href="assets/styles/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+        <!-- MODAL - OVERLAY -->
+        <div class="m-modal-overlay"></div>
+
+
+
+
+        <!-- MODAL - ADD USER - START -->
+        <div class="m-modal" id="modal-user-options">
+            <class="m-modal-con">
+                <div class="m-app-nav">
+                    <ul>
+                        <li id="user-options-edit">
+                            <div class="fa fa-pencil item-icon"></div>
+                            <div class="item-text">Edit User</div>
+                        </li>
+                        <li>
+                            <div class="fa fa-trash-o item-icon"></div>
+                            <div class="item-text">Remove User</div>
+                        </li>
+                        <li>
+                            <div class="fa fa-plus-circle item-icon"></div>
+                            <div class="item-text">Assign Patients</div>
+                        </li>
+                        <li>
+                            <div class="fa fa-rotate-right item-icon"></div>
+                            <div class="item-text">Reset Password</div>
+                        </li>
+                        <li id="user-options-cancel">
+                            <div class="fa fa-times item-icon"></div>
+                            <div class="item-text">Cancel</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL - ADD USER - START -->
+
+
+
+
+        <!-- MODAL - ADD USER - START -->
+        <div class="m-modal m-modal-wizard" id="modal-add-user">
+            <class="m-modal-con">
+                <div class="m-modal-close modal-close">
+                    <div class="fa fa-close"></div>
+                </div>
+
+                <div class="header">
+                    <div class="title">Add User</div>
+                    <div class="m-nav-wizard">
+                        <ul>
+                            <li class="step-active" id="modal-add-user-tab-1">
+                                <div class="step-item">
+                                    <div class="step-icon">1</div>
+                                    <div class="step-text">User Identification</div>
+                                </div>
+                            </li>
+                            <li id="modal-add-user-tab-2">
+                                <div class="step-item">
+                                    <div class="step-icon">2</div>
+                                    <div class="step-text">Department</div>
+                                </div>
+                            </li>
+                            <li id="modal-add-user-tab-3">
+                                <div class="step-item">
+                                    <div class="step-icon">3</div>
+                                    <div class="step-text">Role</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="step" id="modal-add-user-step-1">
+                        <div class="m-form-lblctrl">
+                            <label>First Name: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                        <div class="m-form-lblctrl">
+                            <label>Username: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                        <div class="m-form-lblctrl">
+                            <label>Password: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                        <div class="m-form-lblctrl">
+                            <label>Retype Password: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                    </div>
+                    <div class="step" id="modal-add-user-step-2">
+                        <div class="m-form-lblctrl">
+                            <label>Department Name: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                        <div class="m-form-lblctrl">
+                            <label>Building: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                        <div class="m-form-lblctrl">
+                            <label>Room: <span class="required">*</span></label>
+                            <div><input type="text" /></div>
+                        </div>
+                    </div>
+                    <div class="step" id="modal-add-user-step-3">
+                        <div class="m-form-lblctrl">
+                            <label>Role: <span class="required">*</span></label>
+                            <div class="m-form-checkbox">
+                                <div>
+                                    <input type="checkbox" name="modal-add-user-role" checked />
+                                    <div>Provider</div>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="modal-add-user-role" />
+                                    <div>Admin</div>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="modal-add-user-role" />
+                                    <div>Patient</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <button class="modal-close m-btn m-btn-positive" id="modal-add-user-done">DONE</button>
+                    <button class="m-btn m-btn-positive" id="modal-add-user-next">NEXT</button>
+                    <button class="m-btn m-btn-nuetral" id="modal-add-user-back">BACK</button>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL - ADD USER - START -->
+
+
+
+        <!-- SIDEBAR - START -->
+        <div class="l-sidebar"><div class="l-rel-con">
+
+            <div class="m-logo-user">
+                <div class="logo">
+                    <div class="fa fa-connectdevelop icon"></div>
+                    <div class="company">COMPANY</div>
+                </div>
+
+                <div class="user">
+                    <div class="pic">
+                        <div class="icon"><div class="fa fa-user"></div></div>
+                    </div>
+                    <div class="user-info">
+                        <div class="username">Jeffery Smithsonian</div>
+                        <div class="lastsync">
+                            <span>Last Sync:</span>
+                            <span>2015-06-31</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-app-nav">
+                <ul>
+                    <li class="selected">
+                        <div class="fa fa-user item-icon"></div>
+                        <div class="item-text">Users</div>
+                    </li>
+                    <li>
+                        <div class="fa fa-bed item-icon"></div>
+                        <div class="item-text">Patients</div>
+                    </li>
+                    <li>
+                        <div class="fa fa-users item-icon"></div>
+                        <div class="item-text">Roles</div>
+                    </li>
+                    <li>
+                        <div class="fa fa-calculator item-icon"></div>
+                        <div class="item-text">Audit</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="m-double-brand">
+                <div class="fa fa-connectdevelop icon"></div>
+                <div class="company">COMPANY</div>
+            </div>
+
+
+        </div></div>
+        <!-- SIDEBAR - END -->
+
+
+
+
+        <!-- MAIN - START -->
+        <div class="l-main">
+
+
+            <!-- VIEW - USERS - START -->
+            <div class="v-view v-users">
+
+                <!-- VIEW - USERS HEADER - START -->
+                <div class="l-main-header m-view-header"><div class="l-rel-con">
+                    <div class="action-title">
+                        <div class="title">Users</div>
+                    </div>
+                    <div class="actions">
+                        <div class="filters">
+                            <div class="m-form-search">
+                                <input type="text" name="search" />
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div class="m-form-select">
+                                <select>
+                                    <option>Admitting</option>
+                                    <option>Billing</option>
+                                    <option>Cardiology</option>
+                                    <option>Dentistry</option>
+                                    <option>Endocrinology</option>
+                                </select>
+                            </div>
+                            <div class="m-form-select">
+                                <select>
+                                    <option>Provider</option>
+                                    <option>Nurse</option>
+                                    <option>Surgeon</option>
+                                    <option>Orderly</option>
+                                    <option>Psychologist</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="m-btn m-btn-nuetral-header" id="add-user">ADD USER</buttons>
+                    </div>
+                </div></div>
+                <!-- VIEW - USERS HEADER - END -->
+
+                <!-- VIEW - USERS BODY - START -->
+                <div class="l-main-body"><div class="l-rel-con">
+                    <div class="m-table">
+                        <div class="header">
+                            <ul>
+                                <li>
+                                    <div class="picture">&nbsp;</div>
+                                    <div class="name">Name</div>
+                                    <div class="department">Department</div>
+                                    <div class="role">Role</div>
+                                    <div class="contact">Contact</div>
+                                    <div class="related-patients">Related Patients</div>
+                                    <div class="actions">&nbsp;</div>
+                                    <div class="scrollbar-buffer">&nbsp;</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <ul>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                                <li>
+                                    <div class="picture">
+                                        <div class="icon">
+                                            <div class="fa fa-user"></div>
+                                        </div>
+                                    </div>
+                                    <div class="name">Chris Stapleton</div>
+                                    <div class="department">Dermatology</div>
+                                    <div class="role">Provider</div>
+                                    <div class="contact">555-111-1111</div>
+                                    <div class="related-patients">17 patients</div>
+                                    <div class="edit-user actions"><div class="fa fa-ellipsis-v"></div></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer">Showing # of #</div>
+                    </div>
+
+                </div></div>
+                <!-- VIEW - USERS BODY - END -->
+
+            </div>
+            <!-- VIEW - USERS - END -->
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- VIEW - USERS - EDIT - START -->
+            <div class="v-view v-users-edit">
+
+                <!-- VIEW - USERS HEADER - START -->
+                <div class="l-main-header m-view-header"><div class="l-rel-con">
+                    <div class="action-title">
+                        <div class="action">
+                            <div class="fa fa-chevron-left" id="v-users-edit-close"></div>
+                        </div>
+                        <div class="title">Chris Stapleton</div>
+                    </div>
+                    
+                    <div class="m-header-tabs">
+                        <ul>
+                            <li class="tab-active">
+                                <div class="tab-item" id="user-edit-tab-identification">Identification</div>
+                            </li>
+                            <li>
+                                <div class="tab-item" id="user-edit-tab-permissions"permissions>Permissions</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div></div>
+                <!-- VIEW - USERS HEADER - END -->
+
+                <!-- VIEW - USERS BODY - START -->
+                <div class="l-main-body"><div class="l-rel-con">
+
+                    <div class="m-form">
+                        <div class="header">
+                            <button class="m-btn m-btn-positive" id="edit-user-save">SAVE CHANGES</button>
+                            <button class="m-btn m-btn-positive" id="edit-user-save">RESET PASSWORD</button>
+                            <button class="m-btn m-btn-negative" id="edit-user-remove">REMOVE USER</button>
+                            <button class="m-btn m-btn-nuetral" id="edit-user-cancel">CANCEL</button>
+                        </div>
+                        <div class="body">
+                            <div class="m-body-tabs" id="edit-user-tabs-1">
+                                <div class="picture">
+                                    <div class="icon">
+                                        <div class="fa fa-user"></div>
+                                    </div>
+                                    <div class="m-btn m-btn-positive">ADD IMAGE</div>
+                                </div>
+                                <div class="id-form">
+                                    <div class="m-form-lblctrl">
+                                        <label>First Name: <span class="required">*</span></label>
+                                        <div><input type="text" /></div>
+                                    </div>
+                                    <div class="m-form-lblctrl">
+                                        <label>Username: <span class="required">*</span></label>
+                                        <div><input type="text" /></div>
+                                    </div>
+                                    <div class="m-form-lblctrl">
+                                        <label>User Id: <span class="required">*</span></label>
+                                        <div><input type="text" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-body-tabs" id="edit-user-tabs-2">
+                                <div class="m-form-lblctrl">
+                                    <label>Role: <span class="required">*</span></label>
+                                    <div class="m-form-checkbox">
+                                        <div>
+                                            <input type="checkbox" name="modal-add-user-role" checked />
+                                            <div>Provider</div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="modal-add-user-role" />
+                                            <div>Admin</div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="modal-add-user-role" />
+                                            <div>Patient</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div></div>
+                <!-- VIEW - USERS BODY - END -->
+
+            </div>
+            <!-- VIEW - USERS - EDIT - END -->
+
+
+
+
+        </div>
+        <!-- MAIN - END -->
+
+    </body>
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+
+            // Modal step counter
+            var modalStep = 1;
+            var editUserTab = 1;
+
+            // Show edit view
+            $(".v-users").show();
+
+
+
+
+            // CLICK:: MODAL - OPEN ADD USER
+            $(document).on('click', '#add-user', function( e ) {
+                $(".m-modal-overlay").show();
+                $("#modal-add-user").show();
+                $("#modal-add-user-step-1").show();
+                $(".m-modal .footer .m-btn").hide();
+                $(".m-modal .footer #modal-add-user-next").show();
+            });
+
+            // CLICK:: ADD USER WIZARD - NEXT STEP
+            $(document).on('click', '#modal-add-user-next', function( e ) {
+                modalStep = modalStep + 1;
+                modalUpdateStep(modalStep);
+            });
+
+            // CLICK:: ADD USER WIZARD - BACK STEP
+            $(document).on('click', '#modal-add-user-back', function( e ) {
+                modalStep = modalStep - 1;
+                modalUpdateStep(modalStep);
+            });
+
+            // CLICK:: MODAL - CLOSE
+            $(document).on('click', '.modal-close', function( e ) {
+                $(".m-modal").hide();
+                $(".m-modal-overlay").hide();
+                $(".m-modal .step").hide();
+                modalStep = 1;
+            });
+
+
+
+
+            // CLICK:: SHOW EDIT USER VIEW
+            $(document).on('click', '#user-options-edit', function( e ) {
+                $(".m-modal").hide();
+                $(".m-modal-overlay").hide();
+
+                // Reset tab to first
+                editUserTab = 1;
+                updateUserEditTabs(editUserTab, "#user-edit-tab-identification");
+
+                // Hide all pages and open users edit
+                $(".v-view").hide();
+                $(".v-users-edit").show();
+            });
+
+            // CLICK:: CLOSE EDIT USER VIEW
+            $(document).on('click', '#v-users-edit-close ', function( e ) {
+                // Hide all pages and open users edit
+                $(".v-view").hide();
+                $(".v-users").show();
+            });
+
+            // CLICK:: EDIT USER - IDENTIFICATION
+            $(document).on('click', '#user-edit-tab-identification', function( e ) {
+                editUserTab = 1;
+                updateUserEditTabs(editUserTab, "#user-edit-tab-identification");
+            });
+
+            $(document).on('click', '#user-edit-tab-permissions', function( e ) {
+                editUserTab = 2;
+                updateUserEditTabs(editUserTab, "#user-edit-tab-permissions");
+            });
+
+            $(document).on('click', '#edit-user-save, #edit-user-remove, #edit-user-cancel', function( e ) {
+                // Hide all pages and open users edit
+                $(".v-view").hide();
+                $(".v-users").show();                
+            });
+
+
+
+
+            // CLICK:: SHOW USER OPTIONS
+            $(document).on('click', '.edit-user', function( e ) {
+                $(".m-modal-overlay").show();
+                $("#modal-user-options").show();
+            });
+
+            // CLICK:: SHOW USER OPTIONS
+            $(document).on('click', '#user-options-cancel', function( e ) {
+                $(".m-modal").hide();
+                $(".m-modal-overlay").hide();
+            });
+
+
+
+
+            // FUNCTION:: Update the current modal step
+            function modalUpdateStep(step){
+                $(".m-modal .step").hide();
+                $(".m-modal .footer .m-btn").hide();
+
+                $("#modal-add-user-step-" + step).show();
+
+                $("#modal-add-user .m-nav-wizard li").removeClass("step-active");
+                $("#modal-add-user-tab-" + step).addClass("step-active");
+
+                if(step == 1){
+                    $(".m-modal .footer #modal-add-user-next").show();
+                }
+                if(step == 2){
+                    $(".m-modal .footer #modal-add-user-next").show();
+                    $(".m-modal .footer #modal-add-user-back").show();
+                }
+
+                if(step == 3){
+                    $(".m-modal .footer #modal-add-user-done").show();
+                    $(".m-modal .footer #modal-add-user-back").show();
+                }
+            }
+
+            // FUNCTION:: Update the current modal step
+            function updateUserEditTabs(tab, tabId){
+                // Hide all tab bodies
+                $(".m-body-tabs").hide();
+
+                // Show the tab body we requests
+                $("#edit-user-tabs-" + tab).show();
+
+                // Update the active hearder tab
+                $(".v-users-edit .m-header-tabs li").removeClass("tab-active");
+                $(tabId).parent().addClass("tab-active");                
+            }
+
+        });
+    </script>
+</html>

@@ -1,0 +1,12 @@
+// --------------------------------------------------------------------------------
+// MODULES - TABS
+// --------------------------------------------------------------------------------
+.m-header-tabs								{ margin-top:42px;
+	ul 										{ @include cf(); }
+	li 										{ @include col(6/12); cursor:pointer; }
+	.tab-item 								{ padding-bottom:3px; color:$color-blue-lighter2; text-align:center; }
+	.tab-active								{
+		.tab-item 							{ color:$color-white-default; border-bottom:13px solid $color-gray-default; }
+	}
+}
+.m-body-tabs								{ @include cf(); padding:20px; }

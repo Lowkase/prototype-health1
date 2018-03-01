@@ -1,0 +1,33 @@
+// --------------------------------------------------------------------------------
+// MODULES - FORMS
+// --------------------------------------------------------------------------------
+.m-form 									{ width:100%; height:100%; position:relative;
+	.header 								{ width:100%; height:60px; padding-top:5px; position:absolute; top:0; left:0; font-weight:normal; border-bottom:1px solid $color-gray-lighter2;
+		.m-btn 								{ width:auto; min-width:120px; margin-left:10px; float:right; }
+	}
+	.body 									{ width:100%; position:absolute; top:60px; left:0; bottom:0; overflow-y:scroll; }
+}
+
+.m-form-lblctrl 							{ @include cf(); margin-bottom:20px;
+	> label, > div 							{ display:block; }
+	> label 								{ @include col(4/12); @include text-truncate(); line-height:40px; 
+		.required 							{ color:$color-orange-default; font-size:0.875; }
+	}
+	> div 									{ @include col(8/12); }
+}	
+
+.m-form-search								{ width:260px; position:relative; background:$color-white-default; border:1px solid $color-gray-lighter2;
+	input 									{ width:85%; padding-left:5px; border:0; }
+	i 										{ position:absolute; top:10px; right:3px; font-size:1em; cursor:pointer; }
+}
+
+.m-form-checkbox 							{ margin-top:10px;
+	> div 									{ @include cf(); margin-bottom:5px; } 
+	> div > input							{ margin-top:4px; float:left; margin-right:10px; }
+	> div > div 							{ float:left; }
+}
+
+.m-form-select                          	{ 
+												margin-bottom:20px; display:block; background:$color-white-default; border:1px solid $color-gray-lighter2;  
+												box-shadow:rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px;
+}

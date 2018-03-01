@@ -1,0 +1,36 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - SIDEBAR
+// --------------------------------------------------------------------------------
+.m-logo-user 								{ margin-bottom:30px; padding:10px; border-bottom:1px solid $color-gray-lighter1;
+	.logo 									{ @include cf(); margin-bottom:20px;
+		.icon 								{ margin-right:10px; float:left; font-size:1.5em; }
+		.company 							{ float:left; line-height:27px; }
+	}
+
+	.user 									{ @include cf();
+		.pic 								{ @include span(3/12);
+			.icon 							{ width:40px; height:40px; margin-bottom:12px; padding:6px 8px; background:$color-white-default; @include border-radius-all(30px);
+				.fa 						{ display:block; font-size:2em; }
+			}			
+		}
+		.user-info							{ @include span(9/12);
+			.username 						{ font-weight:$font-weight-medium; }
+			.lastsync 						{ font-size:0.750em; font-style:italic; }			
+		}
+	}
+}
+
+.m-app-nav 									{
+	li 										{ @include cf(); padding:15px 10px; background:$color-white-default; cursor:pointer;
+		.item-icon 							{ width:30px; margin-right:10px; float:left; font-size:1.25em; }
+		.item-text 							{ float:left; }
+	}
+	li:first-child 							{ border-top:1px solid $color-gray-lighter1; }
+	li:hover, li.selected					{ background:$color-blue-lighter1; color:$color-white-default; }
+}
+
+.m-double-brand 							{ 
+	.icon, .company							{ width:100%; margin:0 auto; position:absolute; right:0; left:0; text-align:center; }
+	.icon 									{ bottom:45px; }
+	.company 								{ bottom:20px; }
+}

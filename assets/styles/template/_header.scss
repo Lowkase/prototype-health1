@@ -1,0 +1,17 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - HEADER 
+// --------------------------------------------------------------------------------
+.m-view-header 								{
+	.action-title							{ @include cf(); margin-bottom:25px;
+		> div 								{ color:$color-white-default; font-size:1.5em; font-weight:normal; }
+		.action 							{ @include span(.04); cursor:pointer; }
+		.title 								{ @include span(.9); }
+	}
+	.actions 								{ @include cf();
+		.filters 							{
+			.m-form-search 					{ margin-right:10px; float:left; }
+			.m-form-select 					{ margin-right:10px; float:left; }
+		}
+		.m-btn 								{ float:right; }
+	}
+}

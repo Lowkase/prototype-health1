@@ -1,0 +1,1371 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/* -------------------------------------------------------------------------------- */
+/* MIXINS - BORDER-RADIUS-ALL
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* MIXINS - BORDER-RADIUS
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* MIXINS - TEXT-TRUNCATE
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* BASE - ELEMENTS
+/* -------------------------------------------------------------------------------- */
+/* line 4, base/_elements.scss */
+html {
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.4;
+}
+/* line 5, base/_elements.scss */
+html ::selection {
+  background: #b3d4fc;
+}
+/* line 6, base/_elements.scss */
+html ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+}
+/* line 7, base/_elements.scss */
+html ::-webkit-scrollbar-thumb {
+  background: #bcbcbc;
+}
+
+/* line 10, base/_elements.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: none;
+}
+
+/* line 12, base/_elements.scss */
+body {
+  width: 100%;
+  min-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333333;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+/* line 20, base/_elements.scss */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, base/_elements.scss */
+p {
+  margin: 5px 0;
+}
+
+/* line 22, base/_elements.scss */
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* line 23, base/_elements.scss */
+button {
+  font-family: "Roboto", sans-serif;
+  border: 0;
+}
+
+/* line 24, base/_elements.scss */
+select {
+  height: 40px;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.875em;
+  border: 0;
+}
+
+/* line 25, base/_elements.scss */
+input[type=text] {
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+/* line 4, modules/_buttons.scss */
+.m-btn {
+  width: 120px;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 0.875em;
+  font-weight: normal;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.13725) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.11765) 0px 1px 5px 0px;
+}
+
+/* line 8, modules/_buttons.scss */
+.m-btn-positive {
+  background: #4897d0;
+  color: #fff;
+}
+
+/* line 9, modules/_buttons.scss */
+.m-btn-negative {
+  background: #d19d30;
+  color: #fff;
+}
+
+/* line 10, modules/_buttons.scss */
+.m-btn-nuetral {
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+/* line 11, modules/_buttons.scss */
+.m-btn-nuetral-header {
+  background: #f4f4f4;
+}
+
+/* line 4, modules/_forms.scss */
+.m-form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 5, modules/_forms.scss */
+.m-form .header {
+  width: 100%;
+  height: 60px;
+  padding-top: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: normal;
+  border-bottom: 1px solid #e6e6e6;
+}
+/* line 6, modules/_forms.scss */
+.m-form .header .m-btn {
+  width: auto;
+  min-width: 120px;
+  margin-left: 10px;
+  float: right;
+}
+/* line 8, modules/_forms.scss */
+.m-form .body {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+/* line 11, modules/_forms.scss */
+.m-form-lblctrl {
+  *zoom: 1;
+  margin-bottom: 20px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-form-lblctrl:before, .m-form-lblctrl:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-form-lblctrl:after {
+  clear: both;
+}
+/* line 12, modules/_forms.scss */
+.m-form-lblctrl > label, .m-form-lblctrl > div {
+  display: block;
+}
+/* line 13, modules/_forms.scss */
+.m-form-lblctrl > label {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 40px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-form-lblctrl > label:before, .m-form-lblctrl > label:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-form-lblctrl > label:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-form-lblctrl > label:last-child {
+  margin-right: 0%;
+}
+/* line 14, modules/_forms.scss */
+.m-form-lblctrl > label .required {
+  color: #d19d30;
+  font-size: 0.875;
+}
+/* line 16, modules/_forms.scss */
+.m-form-lblctrl > div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 65.66667%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-form-lblctrl > div:before, .m-form-lblctrl > div:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-form-lblctrl > div:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-form-lblctrl > div:last-child {
+  margin-right: 0%;
+}
+
+/* line 19, modules/_forms.scss */
+.m-form-search {
+  width: 260px;
+  position: relative;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}
+/* line 20, modules/_forms.scss */
+.m-form-search input {
+  width: 85%;
+  padding-left: 5px;
+  border: 0;
+}
+/* line 21, modules/_forms.scss */
+.m-form-search i {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* line 24, modules/_forms.scss */
+.m-form-checkbox {
+  margin-top: 10px;
+}
+/* line 25, modules/_forms.scss */
+.m-form-checkbox > div {
+  *zoom: 1;
+  margin-bottom: 5px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-form-checkbox > div:before, .m-form-checkbox > div:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-form-checkbox > div:after {
+  clear: both;
+}
+/* line 26, modules/_forms.scss */
+.m-form-checkbox > div > input {
+  margin-top: 4px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 27, modules/_forms.scss */
+.m-form-checkbox > div > div {
+  float: left;
+}
+
+/* line 30, modules/_forms.scss */
+.m-form-select {
+  margin-bottom: 20px;
+  display: block;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  box-shadow: rgba(0, 0, 0, 0.13725) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.11765) 0px 1px 5px 0px;
+}
+
+/* line 4, modules/_modals.scss */
+.m-modal {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: #fff;
+  z-index: 599;
+}
+/* line 5, modules/_modals.scss */
+.m-modal .header {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+/* line 6, modules/_modals.scss */
+.m-modal .header .title {
+  text-align: center;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+/* line 8, modules/_modals.scss */
+.m-modal .body {
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  bottom: 60px;
+  padding: 20px;
+  background: #f4f4f4;
+}
+/* line 9, modules/_modals.scss */
+.m-modal .body .step {
+  display: none;
+}
+/* line 11, modules/_modals.scss */
+.m-modal .footer {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #e6e6e6;
+}
+/* line 12, modules/_modals.scss */
+.m-modal .footer .m-btn {
+  margin-left: 10px;
+  float: right;
+}
+/* line 15, modules/_modals.scss */
+.m-modal.m-modal-wizard .header {
+  height: 100px;
+}
+/* line 16, modules/_modals.scss */
+.m-modal.m-modal-wizard .body {
+  top: 100px;
+}
+/* line 17, modules/_modals.scss */
+.m-modal.m-modal-wizard .m-nav-wizard {
+  margin-top: 27px;
+  display: block;
+}
+
+/* line 20, modules/_modals.scss */
+.m-modal-close {
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* line 21, modules/_modals.scss */
+.m-modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 299;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* line 23, modules/_modals.scss */
+.m-nav-wizard {
+  display: none;
+}
+/* line 24, modules/_modals.scss */
+.m-nav-wizard ul {
+  *zoom: 1;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-nav-wizard ul:before, .m-nav-wizard ul:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-nav-wizard ul:after {
+  clear: both;
+}
+/* line 25, modules/_modals.scss */
+.m-nav-wizard li {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  *zoom: 1;
+  text-align: center;
+  font-weight: 300;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-nav-wizard li:before, .m-nav-wizard li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-nav-wizard li:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-nav-wizard li:last-child {
+  margin-right: 0%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-nav-wizard li:before, .m-nav-wizard li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-nav-wizard li:after {
+  clear: both;
+}
+/* line 26, modules/_modals.scss */
+.m-nav-wizard .step-icon {
+  padding: 3px 7px;
+  display: inline;
+  background: #bcbcbc;
+  color: #fff;
+  font-size: 0.750em;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+/* line 27, modules/_modals.scss */
+.m-nav-wizard .step-text {
+  display: inline;
+  color: #bcbcbc;
+  font-size: 0.875em;
+}
+/* line 29, modules/_modals.scss */
+.m-nav-wizard .step-active .step-icon {
+  background: #4897d0;
+}
+/* line 30, modules/_modals.scss */
+.m-nav-wizard .step-active .step-text {
+  color: #4897d0;
+}
+
+/* line 34, modules/_modals.scss */
+#modal-user-options {
+  width: 240px;
+  height: 260px;
+}
+
+/* line 4, modules/_tables.scss */
+.m-table {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 5, modules/_tables.scss */
+.m-table .header {
+  width: 100%;
+  height: 40px;
+  padding-right: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: normal;
+  border-bottom: 1px solid #e6e6e6;
+}
+/* line 6, modules/_tables.scss */
+.m-table .header li {
+  *zoom: 1;
+  padding: 10px 0;
+  font-size: 0.875em;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .header li:before, .m-table .header li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .header li:after {
+  clear: both;
+}
+/* line 7, modules/_tables.scss */
+.m-table .header li > div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.74%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+  line-height: 29px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .header li > div:before, .m-table .header li > div:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .header li > div:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .header li > div:last-child {
+  margin-right: 0%;
+}
+/* line 8, modules/_tables.scss */
+.m-table .header li > div.name {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 18.8%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .header li > div.name:before, .m-table .header li > div.name:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .header li > div.name:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .header li > div.name:last-child {
+  margin-right: 0%;
+}
+/* line 9, modules/_tables.scss */
+.m-table .header li > div.picture {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 4.59%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .header li > div.picture:before, .m-table .header li > div.picture:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .header li > div.picture:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .header li > div.picture:last-child {
+  margin-right: 0%;
+}
+/* line 10, modules/_tables.scss */
+.m-table .header li > div.actions {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 8.65%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .header li > div.actions:before, .m-table .header li > div.actions:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .header li > div.actions:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .header li > div.actions:last-child {
+  margin-right: 0%;
+}
+/* line 11, modules/_tables.scss */
+.m-table .header li > div.scrollbar-buffer {
+  width: 10px;
+  float: left;
+}
+/* line 13, modules/_tables.scss */
+.m-table .body {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  bottom: 40px;
+  overflow-y: scroll;
+}
+/* line 14, modules/_tables.scss */
+.m-table .body li {
+  *zoom: 1;
+  padding: 10px 0;
+  font-size: 0.875em;
+  cursor: pointer;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .body li:before, .m-table .body li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .body li:after {
+  clear: both;
+}
+/* line 15, modules/_tables.scss */
+.m-table .body li:nth-child(even) {
+  background: #e6e6e6;
+}
+/* line 16, modules/_tables.scss */
+.m-table .body li > div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.74%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+  line-height: 29px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .body li > div:before, .m-table .body li > div:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .body li > div:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .body li > div:last-child {
+  margin-right: 0%;
+}
+/* line 17, modules/_tables.scss */
+.m-table .body li > div.name {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 18.8%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .body li > div.name:before, .m-table .body li > div.name:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .body li > div.name:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .body li > div.name:last-child {
+  margin-right: 0%;
+}
+/* line 18, modules/_tables.scss */
+.m-table .body li > div.picture {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 4.59%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .body li > div.picture:before, .m-table .body li > div.picture:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .body li > div.picture:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .body li > div.picture:last-child {
+  margin-right: 0%;
+}
+/* line 19, modules/_tables.scss */
+.m-table .body li > div.picture .icon {
+  width: 29px;
+  height: 29px;
+  padding: 3px 6px;
+  background: #e6e6e6;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+/* line 20, modules/_tables.scss */
+.m-table .body li > div.picture .icon .fa {
+  display: block;
+  font-size: 1.525em;
+}
+/* line 23, modules/_tables.scss */
+.m-table .body li > div.actions {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 8.65%;
+  margin-left: 0%;
+  margin-right: 1.5%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-table .body li > div.actions:before, .m-table .body li > div.actions:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-table .body li > div.actions:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-table .body li > div.actions:last-child {
+  margin-right: 0%;
+}
+/* line 24, modules/_tables.scss */
+.m-table .body li > div.actions .fa {
+  margin-top: 4px;
+  margin-left: 20px;
+  display: block;
+  font-size: 1.375em;
+}
+/* line 27, modules/_tables.scss */
+.m-table .footer {
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  padding-right: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+  font-size: 0.875em;
+  font-weight: normal;
+  border-top: 1px solid #e6e6e6;
+}
+
+/* line 4, modules/_tabs.scss */
+.m-header-tabs {
+  margin-top: 42px;
+}
+/* line 5, modules/_tabs.scss */
+.m-header-tabs ul {
+  *zoom: 1;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-header-tabs ul:before, .m-header-tabs ul:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-header-tabs ul:after {
+  clear: both;
+}
+/* line 6, modules/_tabs.scss */
+.m-header-tabs li {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  cursor: pointer;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-header-tabs li:before, .m-header-tabs li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-header-tabs li:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.m-header-tabs li:last-child {
+  margin-right: 0%;
+}
+/* line 7, modules/_tabs.scss */
+.m-header-tabs .tab-item {
+  padding-bottom: 3px;
+  color: #b7d3e7;
+  text-align: center;
+}
+/* line 9, modules/_tabs.scss */
+.m-header-tabs .tab-active .tab-item {
+  color: #fff;
+  border-bottom: 13px solid #333333;
+}
+
+/* line 12, modules/_tabs.scss */
+.m-body-tabs {
+  *zoom: 1;
+  padding: 20px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-body-tabs:before, .m-body-tabs:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-body-tabs:after {
+  clear: both;
+}
+
+/* line 5, template/_header.scss */
+.m-view-header .action-title {
+  *zoom: 1;
+  margin-bottom: 25px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-view-header .action-title:before, .m-view-header .action-title:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-view-header .action-title:after {
+  clear: both;
+}
+/* line 6, template/_header.scss */
+.m-view-header .action-title > div {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+/* line 7, template/_header.scss */
+.m-view-header .action-title .action {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 4%;
+  margin-left: 0%;
+  margin-right: 0%;
+  cursor: pointer;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-view-header .action-title .action:before, .m-view-header .action-title .action:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-view-header .action-title .action:after {
+  clear: both;
+}
+/* line 8, template/_header.scss */
+.m-view-header .action-title .title {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 90%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-view-header .action-title .title:before, .m-view-header .action-title .title:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-view-header .action-title .title:after {
+  clear: both;
+}
+/* line 10, template/_header.scss */
+.m-view-header .actions {
+  *zoom: 1;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-view-header .actions:before, .m-view-header .actions:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-view-header .actions:after {
+  clear: both;
+}
+/* line 12, template/_header.scss */
+.m-view-header .actions .filters .m-form-search {
+  margin-right: 10px;
+  float: left;
+}
+/* line 13, template/_header.scss */
+.m-view-header .actions .filters .m-form-select {
+  margin-right: 10px;
+  float: left;
+}
+/* line 15, template/_header.scss */
+.m-view-header .actions .m-btn {
+  float: right;
+}
+
+/* line 4, template/_body.scss */
+.l-rel-con {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 5, template/_body.scss */
+.l-sidebar {
+  width: 270px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #e6e6e6;
+  border-right: 1px solid #bcbcbc;
+}
+
+/* line 6, template/_body.scss */
+.l-main {
+  min-width: 754px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 270px;
+}
+
+/* line 7, template/_body.scss */
+.l-main-header {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #4897d0;
+}
+
+/* line 8, template/_body.scss */
+.l-main-body {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+
+/* line 4, template/_sidebar.scss */
+.m-logo-user {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-bottom: 1px solid #bcbcbc;
+}
+/* line 5, template/_sidebar.scss */
+.m-logo-user .logo {
+  *zoom: 1;
+  margin-bottom: 20px;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-logo-user .logo:before, .m-logo-user .logo:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-logo-user .logo:after {
+  clear: both;
+}
+/* line 6, template/_sidebar.scss */
+.m-logo-user .logo .icon {
+  margin-right: 10px;
+  float: left;
+  font-size: 1.5em;
+}
+/* line 7, template/_sidebar.scss */
+.m-logo-user .logo .company {
+  float: left;
+  line-height: 27px;
+}
+/* line 10, template/_sidebar.scss */
+.m-logo-user .user {
+  *zoom: 1;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-logo-user .user:before, .m-logo-user .user:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-logo-user .user:after {
+  clear: both;
+}
+/* line 11, template/_sidebar.scss */
+.m-logo-user .user .pic {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 25%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-logo-user .user .pic:before, .m-logo-user .user .pic:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-logo-user .user .pic:after {
+  clear: both;
+}
+/* line 12, template/_sidebar.scss */
+.m-logo-user .user .pic .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+  padding: 6px 8px;
+  background: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+/* line 13, template/_sidebar.scss */
+.m-logo-user .user .pic .icon .fa {
+  display: block;
+  font-size: 2em;
+}
+/* line 16, template/_sidebar.scss */
+.m-logo-user .user .user-info {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 75%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-logo-user .user .user-info:before, .m-logo-user .user .user-info:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-logo-user .user .user-info:after {
+  clear: both;
+}
+/* line 17, template/_sidebar.scss */
+.m-logo-user .user .user-info .username {
+  font-weight: 500;
+}
+/* line 18, template/_sidebar.scss */
+.m-logo-user .user .user-info .lastsync {
+  font-size: 0.750em;
+  font-style: italic;
+}
+
+/* line 24, template/_sidebar.scss */
+.m-app-nav li {
+  *zoom: 1;
+  padding: 15px 10px;
+  background: #fff;
+  cursor: pointer;
+}
+/* line 344, libs/jeet/_grid.scss */
+.m-app-nav li:before, .m-app-nav li:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.m-app-nav li:after {
+  clear: both;
+}
+/* line 25, template/_sidebar.scss */
+.m-app-nav li .item-icon {
+  width: 30px;
+  margin-right: 10px;
+  float: left;
+  font-size: 1.25em;
+}
+/* line 26, template/_sidebar.scss */
+.m-app-nav li .item-text {
+  float: left;
+}
+/* line 28, template/_sidebar.scss */
+.m-app-nav li:first-child {
+  border-top: 1px solid #bcbcbc;
+}
+/* line 29, template/_sidebar.scss */
+.m-app-nav li:hover, .m-app-nav li.selected {
+  background: #4897d0;
+  color: #fff;
+}
+
+/* line 33, template/_sidebar.scss */
+.m-double-brand .icon, .m-double-brand .company {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+/* line 34, template/_sidebar.scss */
+.m-double-brand .icon {
+  bottom: 45px;
+}
+/* line 35, template/_sidebar.scss */
+.m-double-brand .company {
+  bottom: 20px;
+}
+
+/* line 4, template/_view.scss */
+.v-view {
+  display: none;
+}
+
+/* line 5, views/_users-edit.scss */
+.v-users-edit #edit-user-tabs-1 .picture {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  text-align: center;
+}
+/* line 344, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .picture:before, .v-users-edit #edit-user-tabs-1 .picture:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .picture:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .picture:last-child {
+  margin-right: 0%;
+}
+/* line 6, views/_users-edit.scss */
+.v-users-edit #edit-user-tabs-1 .picture .icon {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 0 10px 27px;
+  padding: 10px 14px;
+  background: #bcbcbc;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+/* line 7, views/_users-edit.scss */
+.v-users-edit #edit-user-tabs-1 .picture .icon .fa {
+  display: block;
+  font-size: 2.5em;
+}
+/* line 9, views/_users-edit.scss */
+.v-users-edit #edit-user-tabs-1 .picture .m-btn {
+  display: block;
+}
+/* line 11, views/_users-edit.scss */
+.v-users-edit #edit-user-tabs-1 .id-form {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+/* line 344, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .id-form:before, .v-users-edit #edit-user-tabs-1 .id-form:after {
+  content: '';
+  display: table;
+}
+/* line 349, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .id-form:after {
+  clear: both;
+}
+/* line 58, libs/jeet/_grid.scss */
+.v-users-edit #edit-user-tabs-1 .id-form:last-child {
+  margin-right: 0%;
+}
